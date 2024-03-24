@@ -1,7 +1,8 @@
 import { IoLocationOutline } from "react-icons/io5";
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 const Job = ({ job }) => {
-    const { logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = job;
+    const {id, logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = job;
     return (
         <div>
             <div className="card card-compact p-10 space-y-10 bg-base-100 shadow-xl">
@@ -21,9 +22,11 @@ const Job = ({ job }) => {
                         </div>
                     </div>
 
+                    <Link to={`/job/${id}`}>
                     <div className="card-actions ">
                         <button className="btn btn-primary">View Details</button>
                     </div>
+                    </Link>
                 </div>
             </div>
 

@@ -17,8 +17,11 @@ const FeatureJob = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 {
-                    jobs.slice(0,4).map(job=><Job key={job.id} job={job}></Job>)
+                    jobs.slice(0,dataLength).map(job=><Job key={job.id} job={job}></Job>)
                 }
+            </div>
+            <div className={ dataLength===jobs.length? 'hidden':'text-center my-10'} >
+                <button onClick={()=>setDataLength(jobs.length)}  className="btn btn-primary text-center">See All Jobs</button>
             </div>
         </div>
     );
